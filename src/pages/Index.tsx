@@ -11,6 +11,7 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPolicyOpen, setIsPolicyOpen] = useState(false);
+  const [isOfferOpen, setIsOfferOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -456,8 +457,22 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="border-t border-gray-700 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
-            <p>&copy; 2024 DeksKids. Все права защищены.</p>
+          <div className="border-t border-gray-700 pt-6 sm:pt-8 text-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm text-gray-400 mb-4">
+              <button 
+                onClick={() => setIsPolicyOpen(true)}
+                className="hover:text-[#B89968] transition-colors underline"
+              >
+                Политика конфиденциальности
+              </button>
+              <button 
+                onClick={() => setIsOfferOpen(true)}
+                className="hover:text-[#B89968] transition-colors underline"
+              >
+                Договор оферты
+              </button>
+            </div>
+            <p className="text-gray-400 text-sm sm:text-base">&copy; 2024 DeksKids. Все права защищены.</p>
           </div>
         </div>
       </footer>
@@ -476,6 +491,22 @@ const Index = () => {
             </p>
             <p>
               Вы можете добавить сюда необходимый текст о том, как компания собирает, использует и защищает персональные данные клиентов.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Offer Agreement Dialog */}
+      <Dialog open={isOfferOpen} onOpenChange={setIsOfferOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-[#151C45]">
+              Договор оферты
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 text-gray-600">
+            <p>
+              Текст договора оферты будет добавлен позже.
             </p>
           </div>
         </DialogContent>
