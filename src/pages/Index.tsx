@@ -4,11 +4,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -387,6 +389,19 @@ const Index = () => {
                       className="border-gray-300 focus:border-[#B89968] focus:ring-[#B89968]"
                     />
                   </div>
+                  <div className="flex items-start gap-2 mb-4">
+                    <input type="checkbox" id="privacy" className="mt-1" required />
+                    <label htmlFor="privacy" className="text-sm text-gray-600">
+                      Я согласен на{' '}
+                      <button
+                        type="button"
+                        onClick={() => setIsPolicyOpen(true)}
+                        className="text-[#B89968] hover:underline font-medium"
+                      >
+                        обработку персональных данных
+                      </button>
+                    </label>
+                  </div>
                   <Button 
                     type="submit" 
                     className="w-full bg-[#B89968] hover:bg-[#a08759] text-white py-5 sm:py-6 text-base sm:text-lg transition-all hover:scale-105"
@@ -446,6 +461,25 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Privacy Policy Dialog */}
+      <Dialog open={isPolicyOpen} onOpenChange={setIsPolicyOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-[#151C45]">
+              Политика конфиденциальности
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 text-gray-600">
+            <p>
+              Здесь будет размещена политика конфиденциальности и информация об обработке персональных данных.
+            </p>
+            <p>
+              Вы можете добавить сюда необходимый текст о том, как компания собирает, использует и защищает персональные данные клиентов.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
