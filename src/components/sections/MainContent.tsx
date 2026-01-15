@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,6 +11,45 @@ interface MainContentProps {
 }
 
 const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/c1e2347d-1b7e-4269-9be8-824e7cafa00d', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Ошибка отправки:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 bg-gradient-to-br from-[#151C45] via-[#1e2655] to-[#2a3570] text-white overflow-hidden">
@@ -261,10 +301,23 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
             <Card className="border-none shadow-xl">
               <CardContent className="p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#151C45] mb-4 sm:mb-6">Отправить сообщение</h3>
-                <form className="space-y-4">
+                {submitStatus === 'success' && (
+                  <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4">
+                    ✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+                    ❌ Ошибка отправки. Попробуйте позже или позвоните нам.
+                  </div>
+                )}
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <Input 
                       placeholder="Ваше имя" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
                       className="border-gray-300 focus:border-[#B89968] focus:ring-[#B89968]"
                     />
                   </div>
@@ -272,6 +325,9 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     <Input 
                       type="tel" 
                       placeholder="Телефон" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
                       className="border-gray-300 focus:border-[#B89968] focus:ring-[#B89968]"
                     />
                   </div>
@@ -279,12 +335,16 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     <Input 
                       type="email" 
                       placeholder="Email" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="border-gray-300 focus:border-[#B89968] focus:ring-[#B89968]"
                     />
                   </div>
                   <div>
                     <Textarea 
                       placeholder="Ваше сообщение" 
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={5}
                       className="border-gray-300 focus:border-[#B89968] focus:ring-[#B89968]"
                     />
@@ -304,9 +364,10 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-[#B89968] hover:bg-[#a08759] text-white py-5 sm:py-6 text-base sm:text-lg transition-all hover:scale-105"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#B89968] hover:bg-[#a08759] text-white py-5 sm:py-6 text-base sm:text-lg transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Отправить
+                    {isSubmitting ? 'Отправка...' : 'Отправить'}
                   </Button>
                 </form>
               </CardContent>
