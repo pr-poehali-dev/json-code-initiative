@@ -48,14 +48,12 @@ const Header = ({ scrollToSection, isMenuOpen, setIsMenuOpen }: HeaderProps) => 
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-10 h-10 bg-[#151C45] rounded-lg flex items-center justify-center">
-              <Icon name="GraduationCap" size={24} className="text-[#B89968]" />
-            </div>
-            <div className="text-2xl font-bold tracking-wide">
-              <span className="text-[#151C45]">Deks</span>
-              <span className="text-[#B89968]">Kids</span>
-            </div>
+          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img 
+              src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg" 
+              alt="DeksKids" 
+              className="h-12 w-auto object-contain"
+            />
           </div>
           
           {/* Desktop Navigation */}
