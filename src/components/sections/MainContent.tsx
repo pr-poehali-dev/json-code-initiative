@@ -23,7 +23,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   const slides = [
     {
-      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e2b75408-799f-44ac-ba95-7799b8658b6e.jpg',
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/c847dc54-1bba-44a3-a798-3fc2438e7d06.jpg',
       title: 'Школьная форма премиум-класса',
       subtitle: 'Коллекция 2025',
       description: 'Элегантность и комфорт в каждой детали'
@@ -101,19 +101,26 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
               <div className="absolute inset-0 z-20 flex items-center">
                 <div className="container mx-auto px-4 sm:px-6">
                   <div className="max-w-2xl">
-                    <p className="text-[#B89968] text-sm md:text-base font-medium mb-2 uppercase tracking-wider animate-fade-in">
+                    <div className="mb-6 animate-fade-in">
+                      <img 
+                        src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+                        alt="DeksKids" 
+                        className="h-20 w-auto object-contain bg-white/10 backdrop-blur-sm px-4 py-2 rounded"
+                      />
+                    </div>
+                    <p className="text-[#B89968] text-sm md:text-base font-medium mb-2 uppercase tracking-wider animate-fade-in" style={{animationDelay: '0.1s'}}>
                       {slide.subtitle}
                     </p>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight animate-slide-in-up">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight animate-slide-in-up" style={{animationDelay: '0.2s'}}>
                       {slide.title}
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-200 mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                    <p className="text-lg md:text-xl text-gray-200 mb-8 animate-fade-in" style={{animationDelay: '0.3s'}}>
                       {slide.description}
                     </p>
                     <Button
                       onClick={() => scrollToSection('collections')}
                       className="bg-[#B89968] hover:bg-[#a08759] text-white px-8 py-6 text-lg rounded-none transition-all hover:scale-105 animate-scale-in"
-                      style={{animationDelay: '0.3s'}}
+                      style={{animationDelay: '0.4s'}}
                     >
                       Смотреть коллекцию
                     </Button>
@@ -183,7 +190,14 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       <section id="about" className="py-16 md:py-24 px-4 sm:px-6 bg-[#F5F5F5]">
         <div className="container mx-auto">
           <div className="text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#151C45] mb-4">О бренде DeksKids</h2>
+            <div className="flex justify-center mb-6">
+              <img 
+                src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+                alt="DeksKids - школьная форма" 
+                className="h-20 w-auto object-contain bg-white px-4 py-2 rounded-lg shadow-md"
+              />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-[#151C45] mb-4">О бренде</h2>
             <div className="w-24 h-1 bg-[#B89968] mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg">
               Российский производитель школьной формы премиум-класса. Создаём одежду, в которой дети чувствуют себя уверенно и комфортно.
@@ -279,8 +293,16 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
               >
                 <div className="h-72 bg-gradient-to-br from-[#151C45] to-[#2a3570] relative overflow-hidden">
                   <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Icon name={item.icon as any} size={80} className="text-[#B89968] opacity-20 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                    <img 
+                      src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+                      alt="DeksKids" 
+                      className="h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-500"
+                      style={{filter: 'brightness(0) invert(1)'}}
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4 z-10">
+                    <Icon name={item.icon as any} size={40} className="text-[#B89968]" />
                   </div>
                   <div className="absolute top-4 right-4 bg-[#B89968] text-white px-3 py-1 text-sm font-medium">
                     NEW
@@ -313,6 +335,14 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-96 h-96 bg-[#B89968] rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#B89968] rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 flex items-center justify-center opacity-5">
+            <img 
+              src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+              alt="DeksKids" 
+              className="h-64 w-auto object-contain"
+              style={{filter: 'brightness(0) invert(1)'}}
+            />
+          </div>
         </div>
         
         <div className="container mx-auto relative z-10">
@@ -351,8 +381,15 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
             </p>
           </div>
 
-          <Card className="border-none shadow-xl">
-            <CardContent className="p-8 md:p-12">
+          <Card className="border-none shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 opacity-5">
+              <img 
+                src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+                alt="DeksKids" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <CardContent className="p-8 md:p-12 relative z-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-[#151C45] mb-2">

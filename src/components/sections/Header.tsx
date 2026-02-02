@@ -48,14 +48,12 @@ const Header = ({ scrollToSection, isMenuOpen, setIsMenuOpen }: HeaderProps) => 
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-10 h-10 bg-[#151C45] rounded-lg flex items-center justify-center">
-              <Icon name="GraduationCap" size={24} className="text-[#B89968]" />
-            </div>
-            <div className="text-2xl font-bold tracking-wide">
-              <span className="text-[#151C45]">Deks</span>
-              <span className="text-[#B89968]">Kids</span>
-            </div>
+          <div className="cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img 
+              src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+              alt="DeksKids - школьная форма" 
+              className="h-12 w-auto object-contain bg-white px-3 py-1 rounded"
+            />
           </div>
           
           {/* Desktop Navigation */}
@@ -127,6 +125,13 @@ const Header = ({ scrollToSection, isMenuOpen, setIsMenuOpen }: HeaderProps) => 
             </SheetTrigger>
             <SheetContent side="right" className="bg-white border-l border-gray-200 w-full sm:w-96">
               <div className="flex flex-col gap-6 mt-8">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
+                    alt="DeksKids" 
+                    className="h-16 w-auto object-contain"
+                  />
+                </div>
                 <div className="border-b border-gray-200 pb-4">
                   <h3 className="text-lg font-bold text-[#151C45] mb-4">Каталог</h3>
                   <div className="space-y-2">
