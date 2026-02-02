@@ -1,4 +1,5 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import Icon from '@/components/ui/icon';
 
 interface PolicyDialogsProps {
   isPolicyOpen: boolean;
@@ -19,7 +20,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
           </DialogHeader>
           <div className="prose prose-sm max-w-none text-gray-700 space-y-4">
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-              <h3 className="text-lg font-bold text-yellow-800 mb-2">✅ ВАЖНО: АКТУАЛЬНОСТЬ ЗАКОНОДАТЕЛЬСТВА</h3>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon name="AlertCircle" size={24} className="text-yellow-900" />
+                </div>
+                <h3 className="text-lg font-bold text-yellow-800 flex-1 pt-1">ВАЖНО: АКТУАЛЬНОСТЬ ЗАКОНОДАТЕЛЬСТВА</h3>
+              </div>
               <p className="text-sm text-yellow-700 mb-2">Ключевые законы и изменения (2025-2026):</p>
               <ul className="text-sm text-yellow-700 list-disc pl-5 space-y-1">
                 <li>Федеральный закон от 27.07.2006 N 152-ФЗ «О персональных данных» (редакция от 24.06.2025)</li>
@@ -31,7 +37,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
             </div>
 
             <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
-              <h3 className="text-lg font-bold text-red-800 mb-2">⚠️ КРИТИЧНЫЕ ТРЕБОВАНИЯ (введены в 2025):</h3>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 bg-red-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon name="ShieldAlert" size={24} className="text-red-900" />
+                </div>
+                <h3 className="text-lg font-bold text-red-800 flex-1 pt-1">КРИТИЧНЫЕ ТРЕБОВАНИЯ (введены в 2025):</h3>
+              </div>
               <ul className="text-sm text-red-700 list-disc pl-5 space-y-1">
                 <li>С 01.09.2025 согласие на обработку ПДн должно быть оформлено ОТДЕЛЬНО от других документов</li>
                 <li>Штрафы за нарушение: 15 млн. ₽ за утечку, 300 тыс. ₽ за работу без регистрации</li>
@@ -39,7 +50,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               </ul>
             </div>
 
-            <h2 className="text-xl font-bold text-[#151C45] mt-6 mb-3">ВСТУПЛЕНИЕ</h2>
+            <div className="flex items-center gap-3 mt-6 mb-3">
+              <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="FileText" size={24} className="text-white" />
+              </div>
+              <h2 className="text-xl font-bold text-[#151C45]">ВСТУПЛЕНИЕ</h2>
+            </div>
             <p>
               Общество с ограниченной ответственностью «ДексКидс» (далее – Компания, Оператор), признавая важность 
               конфиденциальности и защиты персональных данных, размещает данную Политику конфиденциальности (далее – Политика) 
@@ -55,7 +71,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               <strong>Версия:</strong> 2.0 (актуальна для всех операций, совершаемых после указанной даты)
             </p>
 
-            <h2 className="text-xl font-bold text-[#151C45] mt-6 mb-3">1. ОПРЕДЕЛЕНИЯ И ТЕРМИНЫ</h2>
+            <div className="flex items-center gap-3 mt-6 mb-3">
+              <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="BookOpen" size={24} className="text-white" />
+              </div>
+              <h2 className="text-xl font-bold text-[#151C45]">1. ОПРЕДЕЛЕНИЯ И ТЕРМИНЫ</h2>
+            </div>
             <p><strong>Персональные данные</strong> – любая информация, относящаяся к физическому лицу, в том числе:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>ФИО, дата рождения, место рождения</li>
@@ -82,10 +103,13 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
             </p>
 
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <p className="text-sm text-gray-600 italic">
-                Данная Политика является публичным документом и доступна всем пользователям Сайта. 
-                Продолжая использование Сайта, вы соглашаетесь с условиями данной Политики конфиденциальности.
-              </p>
+              <div className="flex items-start gap-3 mb-2">
+                <Icon name="Info" size={20} className="text-gray-500 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-gray-600 italic flex-1">
+                  Данная Политика является публичным документом и доступна всем пользователям Сайта. 
+                  Продолжая использование Сайта, вы соглашаетесь с условиями данной Политики конфиденциальности.
+                </p>
+              </div>
             </div>
           </div>
         </DialogContent>
@@ -100,21 +124,36 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
           </DialogHeader>
           <div className="prose prose-sm max-w-none text-gray-700 space-y-4">
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
-              <h3 className="text-lg font-bold text-blue-800 mb-2">📋 Юридические документы в соответствии с законодательством РФ</h3>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon name="Scale" size={24} className="text-blue-900" />
+                </div>
+                <h3 className="text-lg font-bold text-blue-800 flex-1 pt-1">Юридические документы в соответствии с законодательством РФ</h3>
+              </div>
               <p className="text-sm text-blue-700">
                 Данный документ составлен в соответствии с Гражданским кодексом РФ и действующим законодательством 
                 Российской Федерации по состоянию на 2025-2026 годы.
               </p>
             </div>
 
-            <h2 className="text-xl font-bold text-[#151C45] mt-6 mb-3">ДОГОВОР ОФЕРТЫ</h2>
+            <div className="flex items-center gap-3 mt-6 mb-3">
+              <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="FileSignature" size={24} className="text-white" />
+              </div>
+              <h2 className="text-xl font-bold text-[#151C45]">ДОГОВОР ОФЕРТЫ</h2>
+            </div>
             <p>
               Настоящий документ является официальной офертой (предложением) Общества с ограниченной ответственностью 
               «ДексКидс» (далее – Продавец) заключить договор купли-продажи товаров дистанционным способом 
               (далее – Договор) на условиях, изложенных ниже.
             </p>
 
-            <h3 className="text-lg font-bold text-[#151C45] mt-4 mb-2">1. ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            <div className="flex items-center gap-3 mt-4 mb-2">
+              <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="List" size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#151C45]">1. ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            </div>
             <p>
               1.1. В соответствии с пунктом 2 статьи 437 Гражданского кодекса РФ данный документ является публичной 
               офертой, и в случае принятия изложенных ниже условий лицо, производящее акцепт этой оферты, осуществляет 
@@ -129,7 +168,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               усмотрению. Изменения вступают в силу с момента публикации на сайте.
             </p>
 
-            <h3 className="text-lg font-bold text-[#151C45] mt-4 mb-2">2. ПРЕДМЕТ ДОГОВОРА</h3>
+            <div className="flex items-center gap-3 mt-4 mb-2">
+              <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="Package" size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#151C45]">2. ПРЕДМЕТ ДОГОВОРА</h3>
+            </div>
             <p>
               2.1. Продавец обязуется передать в собственность Покупателю товар (школьную форму для девочек, аксессуары 
               и сопутствующие товары), а Покупатель обязуется принять и оплатить товар на условиях настоящего Договора.
@@ -139,7 +183,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               dekskids.ru и в заказе.
             </p>
 
-            <h3 className="text-lg font-bold text-[#151C45] mt-4 mb-2">3. ЦЕНА ТОВАРА И ПОРЯДОК ОПЛАТЫ</h3>
+            <div className="flex items-center gap-3 mt-4 mb-2">
+              <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="CreditCard" size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#151C45]">3. ЦЕНА ТОВАРА И ПОРЯДОК ОПЛАТЫ</h3>
+            </div>
             <p>
               3.1. Цены на товары определяются Продавцом самостоятельно и указываются на сайте dekskids.ru.
             </p>
@@ -157,7 +206,12 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               <li>Электронными деньгами через платежные системы</li>
             </ul>
 
-            <h3 className="text-lg font-bold text-[#151C45] mt-4 mb-2">4. ДОСТАВКА ТОВАРА</h3>
+            <div className="flex items-center gap-3 mt-4 mb-2">
+              <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="Truck" size={20} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#151C45]">4. ДОСТАВКА ТОВАРА</h3>
+            </div>
             <p>
               4.1. Продавец осуществляет доставку товара следующими способами:
             </p>
@@ -173,13 +227,20 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
             </p>
 
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <p className="text-sm text-gray-600">
-                <strong>Реквизиты продавца:</strong><br />
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon name="Building2" size={24} className="text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm text-gray-600">
+                    <strong>Реквизиты продавца:</strong><br />
                 ООО «ДексКидс»<br />
                 Адрес: г. Владивосток, Приморский край<br />
                 Телефон: 8 902 559 00 05<br />
-                Email: info@декскидс.рф
-              </p>
+                    Email: info@декскидс.рф
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </DialogContent>
