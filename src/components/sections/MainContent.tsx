@@ -82,20 +82,8 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   return (
     <>
-      {/* Featured Photo Section */}
-      <section className="relative pt-16 w-full overflow-hidden">
-        <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
-          <img
-            src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg"
-            alt="DeksKids"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        </div>
-      </section>
-
       {/* Hero Slider */}
-      <section className="relative w-full overflow-hidden">
+      <section className="relative pt-16 w-full overflow-hidden">
         <div className="relative h-[600px] md:h-[700px] lg:h-[800px]">
           {slides.map((slide, index) => (
             <div
