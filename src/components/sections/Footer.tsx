@@ -14,12 +14,14 @@ const Footer = ({ scrollToSection, setIsPolicyOpen, setIsOfferOpen }: FooterProp
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <img 
-                src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/34285b0a-f9d1-477f-9753-ed62d5c49dc5.jpg" 
-                alt="DeksKids - школьная форма" 
-                className="h-16 w-auto object-contain bg-white/5 px-3 py-2 rounded"
-              />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center">
+                <Icon name="GraduationCap" size={24} className="text-white" />
+              </div>
+              <div className="text-2xl font-bold">
+                <span className="text-white">Deks</span>
+                <span className="text-[#B89968]">Kids</span>
+              </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Российский производитель школьной формы премиум-класса. Создаём одежду, в которой дети чувствуют себя уверенно.
