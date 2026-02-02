@@ -20,7 +20,6 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentGallerySlide, setCurrentGallerySlide] = useState(0);
 
   const slides = [
     {
@@ -49,37 +48,6 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const galleryImages = [
-    {
-      url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e2b75408-799f-44ac-ba95-7799b8658b6e.jpg',
-      title: 'Праздничная коллекция',
-      description: 'Элегантные платья с белыми фартуками'
-    },
-    {
-      url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/c847dc54-1bba-44a3-a798-3fc2438e7d06.jpg',
-      title: 'Классическая линия',
-      description: 'Строгий стиль для школьных будней'
-    },
-    {
-      url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/b94ab9f0-5603-4fa5-bea4-dce8086c4935.jpg',
-      title: 'Торжественные образы',
-      description: 'Для особенных школьных мероприятий'
-    },
-    {
-      url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/fc395644-7b7c-4aa8-8578-217f3ac7c47f.jpg',
-      title: 'Повседневная коллекция',
-      description: 'Комфорт и практичность каждый день'
-    }
-  ];
-
-  const nextGallerySlide = () => {
-    setCurrentGallerySlide((prev) => (prev + 1) % galleryImages.length);
-  };
-
-  const prevGallerySlide = () => {
-    setCurrentGallerySlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -185,99 +153,6 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Gallery Carousel */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#151C45] mb-4">Наши коллекции</h2>
-            <div className="w-24 h-1 bg-[#B89968] mx-auto mb-6"></div>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Откройте для себя многообразие стилей школьной формы DeksKids
-            </p>
-          </div>
-
-          <div className="relative max-w-6xl mx-auto">
-            {/* Main Gallery Slider */}
-            <div className="relative h-[500px] md:h-[600px] overflow-hidden rounded-lg shadow-2xl">
-              {galleryImages.map((image, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-all duration-700 ${
-                    index === currentGallerySlide 
-                      ? 'opacity-100 scale-100 z-10' 
-                      : 'opacity-0 scale-95 z-0'
-                  }`}
-                >
-                  <img
-                    src={image.url}
-                    alt={image.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#151C45]/90 via-[#151C45]/30 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white z-20">
-                    <h3 className="text-2xl md:text-4xl font-bold mb-2">{image.title}</h3>
-                    <p className="text-lg md:text-xl text-gray-200">{image.description}</p>
-                  </div>
-                </div>
-              ))}
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevGallerySlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white/90 hover:bg-white backdrop-blur-sm flex items-center justify-center transition-all group shadow-lg"
-                aria-label="Previous image"
-              >
-                <Icon name="ChevronLeft" size={28} className="text-[#151C45] group-hover:scale-110 transition-transform" />
-              </button>
-              <button
-                onClick={nextGallerySlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-white/90 hover:bg-white backdrop-blur-sm flex items-center justify-center transition-all group shadow-lg"
-                aria-label="Next image"
-              >
-                <Icon name="ChevronRight" size={28} className="text-[#151C45] group-hover:scale-110 transition-transform" />
-              </button>
-
-              {/* Progress Dots */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
-                {galleryImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentGallerySlide(index)}
-                    className={`transition-all ${
-                      index === currentGallerySlide 
-                        ? 'w-12 h-3 bg-[#B89968]' 
-                        : 'w-3 h-3 bg-white/60 hover:bg-white/90'
-                    } rounded-full`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Thumbnail Preview */}
-            <div className="grid grid-cols-4 gap-4 mt-6">
-              {galleryImages.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentGallerySlide(index)}
-                  className={`relative h-24 md:h-32 overflow-hidden rounded-lg transition-all ${
-                    index === currentGallerySlide 
-                      ? 'ring-4 ring-[#B89968] scale-105 shadow-xl' 
-                      : 'opacity-60 hover:opacity-100 hover:scale-105'
-                  }`}
-                >
-                  <img
-                    src={image.url}
-                    alt={image.title}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </section>
