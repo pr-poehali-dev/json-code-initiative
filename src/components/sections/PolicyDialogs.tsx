@@ -19,7 +19,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
             </DialogTitle>
           </DialogHeader>
           <div className="prose prose-sm max-w-none text-gray-700 space-y-4">
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 animate-slide-in-up" style={{animationDelay: '0.1s'}}>
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon name="AlertCircle" size={24} className="text-yellow-900" />
@@ -36,7 +36,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               </ul>
             </div>
 
-            <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+            <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6 animate-slide-in-up" style={{animationDelay: '0.2s'}}>
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-10 h-10 bg-red-400 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon name="ShieldAlert" size={24} className="text-red-900" />
@@ -50,7 +50,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               </ul>
             </div>
 
-            <div className="flex items-center gap-3 mt-6 mb-3">
+            <div className="flex items-center gap-3 mt-6 mb-3 animate-slide-in-up" style={{animationDelay: '0.3s'}}>
               <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="FileText" size={24} className="text-white" />
               </div>
@@ -71,7 +71,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               <strong>Версия:</strong> 2.0 (актуальна для всех операций, совершаемых после указанной даты)
             </p>
 
-            <div className="flex items-center gap-3 mt-6 mb-3">
+            <div className="flex items-center gap-3 mt-6 mb-3 animate-slide-in-up" style={{animationDelay: '0.4s'}}>
               <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="BookOpen" size={24} className="text-white" />
               </div>
@@ -102,7 +102,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               обезличивание, блокирование, удаление, уничтожение.
             </p>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg animate-scale-in" style={{animationDelay: '0.5s'}}>
               <div className="flex items-start gap-3 mb-2">
                 <Icon name="Info" size={20} className="text-gray-500 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-gray-600 italic flex-1">
@@ -123,7 +123,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
             </DialogTitle>
           </DialogHeader>
           <div className="prose prose-sm max-w-none text-gray-700 space-y-4">
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 animate-slide-in-up" style={{animationDelay: '0.1s'}}>
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon name="Scale" size={24} className="text-blue-900" />
@@ -136,7 +136,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               </p>
             </div>
 
-            <div className="flex items-center gap-3 mt-6 mb-3">
+            <div className="flex items-center gap-3 mt-6 mb-3 animate-slide-in-up" style={{animationDelay: '0.2s'}}>
               <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="FileSignature" size={24} className="text-white" />
               </div>
@@ -148,7 +148,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               (далее – Договор) на условиях, изложенных ниже.
             </p>
 
-            <div className="flex items-center gap-3 mt-4 mb-2">
+            <div className="flex items-center gap-3 mt-4 mb-2 animate-slide-in-up" style={{animationDelay: '0.3s'}}>
               <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="List" size={20} className="text-white" />
               </div>
@@ -168,7 +168,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               усмотрению. Изменения вступают в силу с момента публикации на сайте.
             </p>
 
-            <div className="flex items-center gap-3 mt-4 mb-2">
+            <div className="flex items-center gap-3 mt-4 mb-2 animate-slide-in-up" style={{animationDelay: '0.4s'}}>
               <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="Package" size={20} className="text-white" />
               </div>
@@ -183,7 +183,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               dekskids.ru и в заказе.
             </p>
 
-            <div className="flex items-center gap-3 mt-4 mb-2">
+            <div className="flex items-center gap-3 mt-4 mb-2 animate-slide-in-up" style={{animationDelay: '0.5s'}}>
               <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="CreditCard" size={20} className="text-white" />
               </div>
@@ -206,7 +206,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               <li>Электронными деньгами через платежные системы</li>
             </ul>
 
-            <div className="flex items-center gap-3 mt-4 mb-2">
+            <div className="flex items-center gap-3 mt-4 mb-2 animate-slide-in-up" style={{animationDelay: '0.6s'}}>
               <div className="w-8 h-8 bg-[#151C45] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name="Truck" size={20} className="text-white" />
               </div>
@@ -226,7 +226,7 @@ const PolicyDialogs = ({ isPolicyOpen, setIsPolicyOpen, isOfferOpen, setIsOfferO
               стоимости заказа.
             </p>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg animate-scale-in" style={{animationDelay: '0.7s'}}>
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-[#B89968] rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon name="Building2" size={24} className="text-white" />
