@@ -18,7 +18,7 @@ const Footer = ({ scrollToSection, setIsPolicyOpen, setIsOfferOpen }: FooterProp
               <img 
                 src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg" 
                 alt="DeksKids" 
-                className="h-12 w-auto object-contain brightness-0 invert"
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
