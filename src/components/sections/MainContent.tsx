@@ -82,8 +82,19 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   return (
     <>
+      {/* Hero Photo */}
+      <section className="relative pt-16 w-full overflow-hidden">
+        <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
+          <img
+            src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/15f952a0-b2a1-48ee-bfcf-57b57f9b1c00.jpg"
+            alt="Школьная форма DeksKids"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
       {/* Benefits Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 bg-white">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
