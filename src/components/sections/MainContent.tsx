@@ -53,14 +53,14 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   const galleryImages = [
     {
-      url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e2b75408-799f-44ac-ba95-7799b8658b6e.jpg',
-      title: 'Праздничная коллекция',
-      description: 'Элегантные платья с белыми фартуками'
-    },
-    {
       url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/c847dc54-1bba-44a3-a798-3fc2438e7d06.jpg',
       title: 'Классическая линия',
       description: 'Строгий стиль для школьных будней'
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e2b75408-799f-44ac-ba95-7799b8658b6e.jpg',
+      title: 'Праздничная коллекция',
+      description: 'Элегантные платья с белыми фартуками'
     },
     {
       url: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/b94ab9f0-5603-4fa5-bea4-dce8086c4935.jpg',
