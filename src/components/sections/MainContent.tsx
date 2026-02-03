@@ -96,7 +96,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-left"
               />
               <div className="absolute inset-0 z-20 flex items-center justify-end">
                 <div className="container mx-auto px-4 sm:px-6">
