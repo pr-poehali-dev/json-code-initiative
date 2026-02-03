@@ -14,11 +14,11 @@ const Footer = ({ scrollToSection, setIsPolicyOpen, setIsOfferOpen }: FooterProp
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center mb-4 group cursor-pointer">
+            <div className="flex items-center mb-4">
               <img 
                 src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg" 
                 alt="DeksKids" 
-                className="h-10 sm:h-12 md:h-14 w-auto object-contain brightness-0 invert transition-all duration-300 group-hover:scale-105 group-hover:opacity-80"
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
