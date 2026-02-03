@@ -82,14 +82,90 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   return (
     <>
-      {/* Hero Photo */}
+      {/* Featured Photo Section */}
       <section className="relative pt-16 w-full overflow-hidden">
-        <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
+        <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
           <img
             src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg"
             alt="DeksKids"
-            className="w-full h-full object-contain bg-white"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        </div>
+      </section>
+
+      {/* Hero Slider */}
+      <section className="relative w-full overflow-hidden">
+        <div className="relative h-[600px] md:h-[700px] lg:h-[800px]">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#151C45]/95 via-[#151C45]/70 to-transparent z-10"></div>
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 z-20 flex items-center">
+                <div className="container mx-auto px-4 sm:px-6">
+                  <div className="max-w-2xl">
+                    <p className="text-[#B89968] text-sm md:text-base font-medium mb-2 uppercase tracking-wider animate-fade-in">
+                      {slide.subtitle}
+                    </p>
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight animate-slide-in-up">
+                      {slide.title}
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-200 mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                      {slide.description}
+                    </p>
+                    <Button
+                      onClick={() => scrollToSection('collections')}
+                      className="bg-[#B89968] hover:bg-[#a08759] text-white px-8 py-6 text-lg rounded-none transition-all hover:scale-105 animate-scale-in"
+                      style={{animationDelay: '0.3s'}}
+                    >
+                      Смотреть коллекцию
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+          
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all group"
+            aria-label="Previous slide"
+          >
+            <Icon name="ChevronLeft" size={24} className="text-white group-hover:scale-110 transition-transform" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all group"
+            aria-label="Next slide"
+          >
+            <Icon name="ChevronRight" size={24} className="text-white group-hover:scale-110 transition-transform" />
+          </button>
+
+          {/* Dots */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentSlide 
+                    ? 'bg-[#B89968] w-8' 
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

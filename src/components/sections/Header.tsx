@@ -48,11 +48,11 @@ const Header = ({ scrollToSection, isMenuOpen, setIsMenuOpen }: HeaderProps) => 
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img 
               src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg" 
               alt="DeksKids" 
-              className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             />
           </div>
           
