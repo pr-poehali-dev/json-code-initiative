@@ -86,9 +86,9 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       <section className="relative pt-16 w-full overflow-hidden">
         <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
           <img
-            src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/141929ba-3c4f-458a-8513-7b0a190d8146.jpg"
-            alt="DeksKids"
-            className="w-full h-full object-contain bg-white"
+            src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/15f952a0-b2a1-48ee-bfcf-57b57f9b1c00.jpg"
+            alt="Школьная форма DeksKids"
+            className="w-full h-full object-cover"
           />
         </div>
       </section>
