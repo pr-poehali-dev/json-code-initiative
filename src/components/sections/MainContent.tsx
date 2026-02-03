@@ -157,6 +157,41 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
         </div>
       </section>
 
+      {/* Photo Carousel Section */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#151C45] mb-4">Наша коллекция</h2>
+            <div className="w-24 h-1 bg-[#B89968] mx-auto"></div>
+          </div>
+
+          <div className="relative max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {[
+                'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/6be724fc-1d14-41ea-912f-259971670945.jpg',
+                'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/92d0fe13-3536-4974-b8ef-99f6b6d9efaf.jpg',
+                'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/a6079f9e-1936-4a82-85cb-c8d25f8b0db8.jpg',
+                'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/21a5185b-8d63-4c66-9e73-6e3f9ac8ae90.jpg',
+                'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/77e76592-9d3b-4cc4-8708-30ecdc45dcae.jpg'
+              ].map((image, index) => (
+                <div 
+                  key={index} 
+                  className="group relative overflow-hidden aspect-[3/4] bg-gray-100 cursor-pointer animate-fade-in"
+                  style={{animationDelay: `${index * 0.1}s`}}
+                >
+                  <img
+                    src={image}
+                    alt={`Школьная форма ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-[#151C45]/0 group-hover:bg-[#151C45]/20 transition-all duration-300"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
         <div className="container mx-auto">
