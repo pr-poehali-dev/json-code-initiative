@@ -23,7 +23,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
 
   const slides = [
     {
-      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/c377e119-63d6-4010-9628-a8f7d745b6cc.jpg',
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4a8c106f-1915-4ca4-b311-7a8d02901ab2.jpg',
       title: 'Школьная форма премиум-класса',
       subtitle: 'Новая коллекция 2026',
       description: 'Элегантность и комфорт в каждой детали'
