@@ -315,14 +315,16 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 className="border-none shadow-md hover:shadow-2xl transition-all group cursor-pointer overflow-hidden animate-fade-in"
                 style={{animationDelay: `${i * 0.1}s`}}
               >
-                <div className="h-72 bg-gradient-to-br from-[#151C45] to-[#2a3570] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                <div className={`h-72 relative overflow-hidden ${item.title === 'Школьные платья' ? 'bg-gray-100' : 'bg-gradient-to-br from-[#151C45] to-[#2a3570]'}`}>
+                  {item.title !== 'Школьные платья' && (
+                    <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                  )}
                   {item.title === 'Школьные платья' ? (
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                    <div className="absolute inset-0 flex items-center justify-center">
                       <img 
                         src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/91bcab56-a34f-447d-a964-0506a915a11b.jpg" 
                         alt="Школьное платье"
-                        className="w-full h-full object-cover opacity-60 brightness-110 group-hover:opacity-80 group-hover:brightness-125 group-hover:scale-110 transition-all duration-500"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                       />
                     </div>
                   ) : (
