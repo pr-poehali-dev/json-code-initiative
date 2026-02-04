@@ -22,6 +22,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDressesModalOpen, setIsDressesModalOpen] = useState(false);
   const [dressImageIndex, setDressImageIndex] = useState<{[key: number]: number}>({});
+  const [fullscreenImage, setFullscreenImage] = useState<{images: string[], currentIndex: number} | null>(null);
 
   const slides = [
     {
@@ -558,12 +559,18 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                   
                   return (
                   <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all">
-                    <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                    <div 
+                      className="relative aspect-[3/4] overflow-hidden bg-gray-100 cursor-pointer"
+                      onClick={() => setFullscreenImage({ images: dress.images, currentIndex: currentImageIndex })}
+                    >
                       <img 
                         src={dress.images[currentImageIndex]} 
                         alt={dress.title}
                         className="w-full h-full object-cover transition-all duration-300"
                       />
+                      <div className="absolute top-2 right-2 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Icon name="Maximize2" size={16} className="text-[#151C45]" />
+                      </div>
                       
                       {dress.images.length > 1 && (
                         <>
@@ -636,6 +643,80 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 })}
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Image Viewer */}
+      {fullscreenImage && (
+        <div 
+          className="fixed inset-0 bg-black z-[100] flex items-center justify-center animate-fade-in"
+          onClick={() => setFullscreenImage(null)}
+        >
+          <button 
+            onClick={() => setFullscreenImage(null)}
+            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors z-10"
+          >
+            <Icon name="X" size={24} className="text-white" />
+          </button>
+
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            <img 
+              src={fullscreenImage.images[fullscreenImage.currentIndex]} 
+              alt="Fullscreen view"
+              className="max-w-full max-h-full object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {fullscreenImage.images.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFullscreenImage(prev => prev ? {
+                      ...prev,
+                      currentIndex: (prev.currentIndex - 1 + prev.images.length) % prev.images.length
+                    } : null);
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+                >
+                  <Icon name="ChevronLeft" size={28} className="text-white" />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFullscreenImage(prev => prev ? {
+                      ...prev,
+                      currentIndex: (prev.currentIndex + 1) % prev.images.length
+                    } : null);
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+                >
+                  <Icon name="ChevronRight" size={28} className="text-white" />
+                </button>
+
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+                  {fullscreenImage.images.map((_, imgIdx) => (
+                    <button
+                      key={imgIdx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFullscreenImage(prev => prev ? { ...prev, currentIndex: imgIdx } : null);
+                      }}
+                      className={`transition-all ${
+                        imgIdx === fullscreenImage.currentIndex 
+                          ? 'w-8 h-2 bg-[#B89968]' 
+                          : 'w-2 h-2 bg-white/50 hover:bg-white/75'
+                      } rounded-full`}
+                    />
+                  ))}
+                </div>
+
+                <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white text-sm">
+                  {fullscreenImage.currentIndex + 1} / {fullscreenImage.images.length}
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
