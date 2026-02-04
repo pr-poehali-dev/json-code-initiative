@@ -21,6 +21,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDressesModalOpen, setIsDressesModalOpen] = useState(false);
+  const [dressImageIndex, setDressImageIndex] = useState<{[key: number]: number}>({});
 
   const slides = [
     {
@@ -552,18 +553,62 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     price: '4 200 ₽',
                     description: 'Комфортное платье свободного кроя с классическим воротником.'
                   }
-                ].map((dress, index) => (
+                ].map((dress, index) => {
+                  const currentImageIndex = dressImageIndex[index] || 0;
+                  
+                  return (
                   <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all">
                     <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
                       <img 
-                        src={dress.images[0]} 
+                        src={dress.images[currentImageIndex]} 
                         alt={dress.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover transition-all duration-300"
                       />
+                      
                       {dress.images.length > 1 && (
-                        <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-medium text-[#151C45] rounded">
-                          +{dress.images.length - 1} фото
-                        </div>
+                        <>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setDressImageIndex(prev => ({
+                                ...prev,
+                                [index]: (currentImageIndex - 1 + dress.images.length) % dress.images.length
+                              }));
+                            }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+                          >
+                            <Icon name="ChevronLeft" size={20} className="text-[#151C45]" />
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setDressImageIndex(prev => ({
+                                ...prev,
+                                [index]: (currentImageIndex + 1) % dress.images.length
+                              }));
+                            }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+                          >
+                            <Icon name="ChevronRight" size={20} className="text-[#151C45]" />
+                          </button>
+                          
+                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            {dress.images.map((_, imgIdx) => (
+                              <button
+                                key={imgIdx}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setDressImageIndex(prev => ({ ...prev, [index]: imgIdx }));
+                                }}
+                                className={`w-2 h-2 rounded-full transition-all ${
+                                  imgIdx === currentImageIndex 
+                                    ? 'bg-[#B89968] w-6' 
+                                    : 'bg-white/70 hover:bg-white'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </>
                       )}
                     </div>
                     <CardContent className="p-4">
@@ -587,7 +632,8 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                       </div>
                     </CardContent>
                   </Card>
-                ))}
+                );
+                })}
               </div>
             </div>
           </div>
