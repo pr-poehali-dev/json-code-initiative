@@ -317,9 +317,19 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
               >
                 <div className="h-72 bg-gradient-to-br from-[#151C45] to-[#2a3570] relative overflow-hidden">
                   <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Icon name={item.icon as any} size={80} className="text-[#B89968] opacity-20 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
-                  </div>
+                  {item.title === 'Школьные платья' ? (
+                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <img 
+                        src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/ce08b835-cb0f-42ca-820f-dc9e576cf7eb.jpg" 
+                        alt="Школьное платье"
+                        className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500"
+                      />
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Icon name={item.icon as any} size={80} className="text-[#B89968] opacity-20 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
+                    </div>
+                  )}
                   <div className="absolute top-4 right-4 bg-[#B89968] text-white px-3 py-1 text-sm font-medium">
                     NEW
                   </div>
