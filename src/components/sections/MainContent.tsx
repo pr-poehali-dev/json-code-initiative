@@ -320,7 +320,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                   {item.title === 'Школьные платья' ? (
                     <div className="absolute inset-0 flex items-center justify-center p-4">
                       <img 
-                        src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/ce08b835-cb0f-42ca-820f-dc9e576cf7eb.jpg" 
+                        src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/91bcab56-a34f-447d-a964-0506a915a11b.jpg" 
                         alt="Школьное платье"
                         className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500"
                       />
