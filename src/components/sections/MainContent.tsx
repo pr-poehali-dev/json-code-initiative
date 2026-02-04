@@ -322,7 +322,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                       <img 
                         src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/91bcab56-a34f-447d-a964-0506a915a11b.jpg" 
                         alt="Школьное платье"
-                        className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500"
+                        className="w-full h-full object-cover opacity-60 brightness-110 group-hover:opacity-80 group-hover:brightness-125 group-hover:scale-110 transition-all duration-500"
                       />
                     </div>
                   ) : (
