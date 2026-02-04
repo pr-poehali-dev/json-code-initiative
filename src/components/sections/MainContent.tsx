@@ -315,7 +315,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 className="border-none shadow-md hover:shadow-2xl transition-all group cursor-pointer overflow-hidden animate-fade-in"
                 style={{animationDelay: `${i * 0.1}s`}}
               >
-                <div className={`h-72 relative overflow-hidden ${item.title === 'Школьные платья' ? 'bg-gray-100' : 'bg-gradient-to-br from-[#151C45] to-[#2a3570]'}`}>
+                <div className={`h-72 relative overflow-hidden ${item.title === 'Школьные платья' ? 'bg-white' : 'bg-gradient-to-br from-[#151C45] to-[#2a3570]'}`}>
                   {item.title !== 'Школьные платья' && (
                     <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                   )}
