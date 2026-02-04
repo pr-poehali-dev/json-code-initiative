@@ -20,6 +20,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isDressesModalOpen, setIsDressesModalOpen] = useState(false);
 
   const slides = [
     {
@@ -331,7 +332,13 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     <Button 
                       size="sm" 
                       className="bg-[#151C45] hover:bg-[#B89968] text-white transition-colors"
-                      onClick={() => scrollToSection('contact')}
+                      onClick={() => {
+                        if (item.title === 'Школьные платья') {
+                          setIsDressesModalOpen(true);
+                        } else {
+                          scrollToSection('contact');
+                        }
+                      }}
                     >
                       Подробнее
                     </Button>
@@ -497,6 +504,95 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
           </Card>
         </div>
       </section>
+
+      {/* Dresses Modal */}
+      {isDressesModalOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setIsDressesModalOpen(false)}
+        >
+          <div 
+            className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between z-10">
+              <div>
+                <h2 className="text-3xl font-bold text-[#151C45]">Школьные платья</h2>
+                <p className="text-gray-600 mt-1">Классические модели с белым воротником</p>
+              </div>
+              <button 
+                onClick={() => setIsDressesModalOpen(false)}
+                className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <Icon name="X" size={24} className="text-gray-600" />
+              </button>
+            </div>
+
+            <div className="p-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    images: [
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/80d5b8a8-351c-457f-9dc0-65a74e1e6a00.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/6289ada2-46be-492d-98ed-6bd3ba08c180.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4a2b213e-9a04-438b-92af-365e5144639b.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/c91aab32-2465-47c3-9b4e-250d311b2ac9.jpg'
+                    ],
+                    title: 'Платье классическое с белым воротником',
+                    sizes: '122-170',
+                    price: '4 500 ₽',
+                    description: 'Лаконичное черное платье с элегантным белым воротником. Идеально для школьных будней.'
+                  },
+                  {
+                    images: [
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/af259301-62aa-457a-8b0e-a30a0961c6eb.jpg'
+                    ],
+                    title: 'Платье А-силуэта с коротким рукавом',
+                    sizes: '122-170',
+                    price: '4 200 ₽',
+                    description: 'Комфортное платье свободного кроя с классическим воротником.'
+                  }
+                ].map((dress, index) => (
+                  <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                      <img 
+                        src={dress.images[0]} 
+                        alt={dress.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {dress.images.length > 1 && (
+                        <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-medium text-[#151C45] rounded">
+                          +{dress.images.length - 1} фото
+                        </div>
+                      )}
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-bold text-[#151C45] mb-2 line-clamp-2">{dress.title}</h3>
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{dress.description}</p>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm text-gray-500">Размеры: {dress.sizes}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xl font-bold text-[#B89968]">{dress.price}</span>
+                        <Button 
+                          size="sm"
+                          className="bg-[#151C45] hover:bg-[#B89968] text-white"
+                          onClick={() => {
+                            setIsDressesModalOpen(false);
+                            scrollToSection('contact');
+                          }}
+                        >
+                          Заказать
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
