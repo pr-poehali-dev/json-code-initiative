@@ -271,7 +271,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
               { 
-                title: 'Классическая коллекция', 
+                title: 'Школьные платья', 
                 desc: 'Строгие силуэты и традиционный крой', 
                 price: 'от 4 500 ₽',
                 icon: 'Star'
