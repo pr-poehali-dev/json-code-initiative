@@ -280,9 +280,9 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 icon: 'Star'
               },
               { 
-                title: 'Праздничная коллекция', 
-                desc: 'Элегантные платья для торжеств', 
-                price: 'от 6 500 ₽',
+                title: 'Школьные фартуки', 
+                desc: 'Классические белые и черные фартуки', 
+                price: 'от 2 500 ₽',
                 icon: 'Sparkles'
               },
               { 
