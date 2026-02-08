@@ -806,19 +806,6 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     sizes: '122-170',
                     price: '2 500 ₽',
                     description: 'Нарядный белый фартук с изящным кружевом и рюшами. Идеален для праздников и торжественных линеек.'
-                  },
-                  {
-                    images: [
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/725ceace-c52e-4454-a0e0-904fe16092c9.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/90c42eac-bd16-45e5-b9f5-3a09316a4f4b.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4f13ed15-316e-4ba5-ac3c-e87fb9372fbc.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/7bbdd2d2-aa30-440b-9902-2546658b9d74.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/d9565599-b7d8-41e2-93d2-7b869669da90.jpg'
-                    ],
-                    title: 'Фартук "Алиса"',
-                    sizes: '122-170',
-                    price: '2 500 ₽',
-                    description: 'Элегантный фартук с кружевными рукавами и нежным декором. Классический дизайн для школьных праздников.'
                   }
                 ].map((apron, index) => {
                   const currentImageIndex = dressImageIndex[index] || 0;
