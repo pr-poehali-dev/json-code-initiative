@@ -832,6 +832,19 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     sizes: '122-170',
                     price: '2 500 ₽',
                     description: 'Роскошный фартук с объёмными рукавами-крылышками и кружевной юбкой. Эффектная модель для торжественных мероприятий.'
+                  },
+                  {
+                    images: [
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/24c1ff20-2b1a-4824-9764-d0c2890b4c8d.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/a6821a2e-a6e4-43ed-ab0e-e4a2cb279906.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/a05074fe-e39c-4d2c-9233-e9197a71ea1c.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/d41f5b9c-bd63-4ba1-9c02-42cb959db89b.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/1a787537-30ab-4135-8649-9678d918b366.jpg'
+                    ],
+                    title: 'Фартук "Корона-1"',
+                    sizes: '122-170',
+                    price: '2 500 ₽',
+                    description: 'Изысканный фартук с ажурным кружевным воротником и узором "корона" на юбке. Королевский образ для особых случаев.'
                   }
                 ].map((apron, index) => {
                   const currentImageIndex = dressImageIndex[index] || 0;
