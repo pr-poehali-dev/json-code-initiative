@@ -38,7 +38,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       description: 'Классические платья с белым воротником'
     },
     {
-      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/fc395644-7b7c-4aa8-8578-217f3ac7c47f.jpg',
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/7010eaf1-0027-44c9-977d-b9fa095221b3.jpg',
       title: 'Школьные фартуки',
       subtitle: 'Для особых случаев',
       description: 'Традиционные фартуки для праздников'
