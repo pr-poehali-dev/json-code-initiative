@@ -315,10 +315,8 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 className="border-none shadow-md hover:shadow-2xl transition-all group cursor-pointer overflow-hidden animate-fade-in"
                 style={{animationDelay: `${i * 0.1}s`}}
               >
-                <div className={`h-72 relative overflow-hidden ${item.title === 'Школьные платья' ? 'bg-white' : 'bg-gradient-to-br from-[#151C45] to-[#2a3570]'}`}>
-                  {item.title !== 'Школьные платья' && (
-                    <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                  )}
+                <div className="h-72 bg-white relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
                   {item.title === 'Школьные платья' ? (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <img 
@@ -329,7 +327,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     </div>
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Icon name={item.icon as any} size={80} className="text-[#B89968] opacity-20 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
+                      <Icon name={item.icon as any} size={80} className="text-[#B89968] opacity-30 group-hover:opacity-50 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
                     </div>
                   )}
                   <div className="absolute top-4 right-4 bg-[#B89968] text-white px-3 py-1 text-sm font-medium">
