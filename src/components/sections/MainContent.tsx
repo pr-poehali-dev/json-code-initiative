@@ -54,6 +54,12 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       title: 'Школьные брюки',
       subtitle: 'Комфорт и стиль',
       description: 'Классические брюки для мальчиков и девочек'
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/b40625ba-c6b1-41a0-80a8-2796b408a914.jpg',
+      title: 'Школьные юбки',
+      subtitle: 'Классика и элегантность',
+      description: 'Стильные юбки разных фасонов'
     }
   ];
 
