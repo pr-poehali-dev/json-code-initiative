@@ -819,6 +819,19 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     sizes: '122-170',
                     price: '2 500 ₽',
                     description: 'Элегантный белый фартук с кружевными рукавами и пышной юбкой. Классический дизайн для школьных праздников.'
+                  },
+                  {
+                    images: [
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e721e78f-0c48-46e5-b632-20cc1a6fdc57.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/f459708b-f099-46c6-be81-06744d31a870.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/a3ad36be-02fd-4e22-915f-080c0bd4f432.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/24b9cee6-c7e5-46e4-ae7b-61569fea2490.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/2ce1966b-7b40-4d4c-8eea-fa25e4fa6295.jpg'
+                    ],
+                    title: 'Фартук "Ф27"',
+                    sizes: '122-170',
+                    price: '2 500 ₽',
+                    description: 'Роскошный фартук с объёмными рукавами-крылышками и кружевной юбкой. Эффектная модель для торжественных мероприятий.'
                   }
                 ].map((apron, index) => {
                   const currentImageIndex = dressImageIndex[index] || 0;
