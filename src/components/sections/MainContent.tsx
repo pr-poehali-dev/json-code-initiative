@@ -42,6 +42,12 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       title: 'Школьные фартуки',
       subtitle: 'Для особых случаев',
       description: 'Традиционные фартуки для праздников'
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/b40625ba-c6b1-41a0-80a8-2796b408a914.jpg',
+      title: 'Школьные сарафаны',
+      subtitle: 'Универсальная классика',
+      description: 'Практичные и стильные сарафаны для школы'
     }
   ];
 
