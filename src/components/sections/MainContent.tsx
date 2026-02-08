@@ -21,6 +21,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDressesModalOpen, setIsDressesModalOpen] = useState(false);
+  const [isApronsModalOpen, setIsApronsModalOpen] = useState(false);
   const [dressImageIndex, setDressImageIndex] = useState<{[key: number]: number}>({});
   const [fullscreenImage, setFullscreenImage] = useState<{images: string[], currentIndex: number} | null>(null);
 
@@ -336,6 +337,8 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 onClick={() => {
                   if (item.title === 'Школьные платья') {
                     setIsDressesModalOpen(true);
+                  } else if (item.title === 'Школьные фартуки') {
+                    setIsApronsModalOpen(true);
                   }
                 }}
               >
@@ -760,6 +763,139 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 </div>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Aprons Modal */}
+      {isApronsModalOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setIsApronsModalOpen(false)}
+        >
+          <div 
+            className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between z-10">
+              <div>
+                <h2 className="text-3xl font-bold text-[#151C45]">Школьные фартуки</h2>
+                <p className="text-gray-600 mt-1">Традиционные белые кружевные фартуки</p>
+              </div>
+              <button 
+                onClick={() => setIsApronsModalOpen(false)}
+                className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <Icon name="X" size={24} className="text-gray-600" />
+              </button>
+            </div>
+
+            <div className="p-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    images: [
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/3616698e-2955-4d95-948b-841ca1371b77.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/089197b2-d75e-49fe-ba40-61a8b94b7c54.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/2eb9c1d1-4143-493d-84a7-ad8fe5de4f6c.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/3ef931cf-4581-47bd-9afd-b31350262079.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/0f026849-df48-46db-8c06-d018a5838bfb.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/cfea7ef9-f60c-44ab-8241-97def8ac4bfc.jpg'
+                    ],
+                    title: 'Фартук праздничный с кружевом',
+                    sizes: '122-170',
+                    price: '2 500 ₽',
+                    description: 'Нарядный белый фартук с изящным кружевом и рюшами. Идеален для праздников и торжественных линеек.'
+                  }
+                ].map((apron, index) => {
+                  const currentImageIndex = dressImageIndex[index] || 0;
+                  
+                  return (
+                  <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all">
+                    <div 
+                      className="relative aspect-[3/4] overflow-hidden bg-gray-100 cursor-pointer"
+                      onClick={() => setFullscreenImage({ images: apron.images, currentIndex: currentImageIndex })}
+                    >
+                      <img 
+                        src={apron.images[currentImageIndex]} 
+                        alt={apron.title}
+                        className="w-full h-full object-cover transition-all duration-300"
+                      />
+                      <div className="absolute top-2 right-2 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Icon name="Maximize2" size={16} className="text-[#151C45]" />
+                      </div>
+                      
+                      {apron.images.length > 1 && (
+                        <>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setDressImageIndex(prev => ({
+                                ...prev,
+                                [index]: (currentImageIndex - 1 + apron.images.length) % apron.images.length
+                              }));
+                            }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+                          >
+                            <Icon name="ChevronLeft" size={20} className="text-[#151C45]" />
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setDressImageIndex(prev => ({
+                                ...prev,
+                                [index]: (currentImageIndex + 1) % apron.images.length
+                              }));
+                            }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+                          >
+                            <Icon name="ChevronRight" size={20} className="text-[#151C45]" />
+                          </button>
+                          
+                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            {apron.images.map((_, imgIdx) => (
+                              <button
+                                key={imgIdx}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setDressImageIndex(prev => ({ ...prev, [index]: imgIdx }));
+                                }}
+                                className={`w-2 h-2 rounded-full transition-all ${
+                                  imgIdx === currentImageIndex 
+                                    ? 'bg-[#B89968] w-6' 
+                                    : 'bg-white/70 hover:bg-white'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-bold text-[#151C45] mb-2 line-clamp-2">{apron.title}</h3>
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{apron.description}</p>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm text-gray-500">Размеры: {apron.sizes}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xl font-bold text-[#B89968]">{apron.price}</span>
+                        <Button 
+                          size="sm"
+                          className="bg-[#151C45] hover:bg-[#B89968] text-white"
+                          onClick={() => {
+                            setIsApronsModalOpen(false);
+                            scrollToSection('contact');
+                          }}
+                        >
+                          Заказать
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       )}
