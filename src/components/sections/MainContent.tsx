@@ -32,10 +32,10 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       description: 'Элегантность и комфорт в каждой детали'
     },
     {
-      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/b94ab9f0-5603-4fa5-bea4-dce8086c4935.jpg',
-      title: 'Праздничная коллекция',
-      subtitle: 'Особенные моменты',
-      description: 'Платья для торжественных случаев'
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e04fdee5-4648-444a-ab80-d816f971b31e.jpg',
+      title: 'Школьные платья',
+      subtitle: 'Элегантность и стиль',
+      description: 'Классические платья с белым воротником'
     },
     {
       image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/fc395644-7b7c-4aa8-8578-217f3ac7c47f.jpg',
