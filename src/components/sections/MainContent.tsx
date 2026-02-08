@@ -797,8 +797,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                     images: [
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/725ceace-c52e-4454-a0e0-904fe16092c9.jpg',
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/90c42eac-bd16-45e5-b9f5-3a09316a4f4b.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4f13ed15-316e-4ba5-ac3c-e87fb9372fbc.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/7bbdd2d2-aa30-440b-9902-2546658b9d74.jpg'
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4f13ed15-316e-4ba5-ac3c-e87fb9372fbc.jpg'
                     ],
                     title: 'Фартук "Алиса"',
                     sizes: '122-170',
