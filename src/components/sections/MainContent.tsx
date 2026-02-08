@@ -550,24 +550,17 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 {[
                   {
                     images: [
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/80d5b8a8-351c-457f-9dc0-65a74e1e6a00.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/6289ada2-46be-492d-98ed-6bd3ba08c180.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4a2b213e-9a04-438b-92af-365e5144639b.jpg',
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/c91aab32-2465-47c3-9b4e-250d311b2ac9.jpg'
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/e04fdee5-4648-444a-ab80-d816f971b31e.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/0dd0b520-7516-4feb-b5e5-e17cc356b429.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/28654bae-75f3-489c-9841-da7decbe7c1b.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/ee39a783-de3a-418e-9546-865ff48208e1.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/94744555-e50d-47a5-8eaf-09d90985f7f9.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/1048c325-cdaa-4720-806a-c6f6bd0a31ea.jpg'
                     ],
-                    title: 'Платье классическое с белым воротником',
+                    title: 'Платье классическое с белым воротником и рюшами',
                     sizes: '122-170',
                     price: '4 500 ₽',
-                    description: 'Лаконичное черное платье с элегантным белым воротником. Идеально для школьных будней.'
-                  },
-                  {
-                    images: [
-                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/af259301-62aa-457a-8b0e-a30a0961c6eb.jpg'
-                    ],
-                    title: 'Платье А-силуэта с коротким рукавом',
-                    sizes: '122-170',
-                    price: '4 200 ₽',
-                    description: 'Комфортное платье свободного кроя с классическим воротником.'
+                    description: 'Элегантное черное платье с белым кружевным воротником и рюшами на рукавах. Идеально для школы и праздников.'
                   }
                 ].map((dress, index) => {
                   const currentImageIndex = dressImageIndex[index] || 0;
