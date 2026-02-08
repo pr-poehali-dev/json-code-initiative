@@ -311,8 +311,8 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 icon: 'Package'
               },
               { 
-                title: 'Спортивная коллекция', 
-                desc: 'Удобная форма для физкультуры', 
+                title: 'Школьные сарафаны', 
+                desc: 'Практичные и стильные сарафаны для школы', 
                 price: 'от 3 000 ₽',
                 icon: 'Zap'
               },
