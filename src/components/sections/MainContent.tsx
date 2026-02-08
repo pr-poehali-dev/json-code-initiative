@@ -314,6 +314,11 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 key={i} 
                 className="border-none shadow-md hover:shadow-2xl transition-all group cursor-pointer overflow-hidden animate-fade-in"
                 style={{animationDelay: `${i * 0.1}s`}}
+                onClick={() => {
+                  if (item.title === 'Школьные платья') {
+                    setIsDressesModalOpen(true);
+                  }
+                }}
               >
                 <div className="h-72 bg-white relative overflow-hidden">
                   <div className="absolute inset-0 bg-[#B89968] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
