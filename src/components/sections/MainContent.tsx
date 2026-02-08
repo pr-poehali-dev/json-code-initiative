@@ -38,10 +38,10 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
       description: 'Классические платья с белым воротником'
     },
     {
-      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/files/fc395644-7b7c-4aa8-8578-217f3ac7c47f.jpg',
-      title: 'Базовая коллекция',
-      subtitle: 'Каждый день',
-      description: 'Практичные решения для школьных будней'
+      image: 'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/0dd0b520-7516-4feb-b5e5-e17cc356b429.jpg',
+      title: 'Школьные платья',
+      subtitle: 'Премиум качество',
+      description: 'Изящные детали и безупречный крой'
     }
   ];
 
