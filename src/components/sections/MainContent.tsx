@@ -107,11 +107,11 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
               }`}
             >
-              <div className="absolute inset-0 bg-[#151C45]/60 z-10"></div>
+              <div className="absolute inset-0 bg-[#1a2b5c] z-10"></div>
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-20"
               />
               <div className="absolute inset-0 z-20 flex items-center justify-center">
                 <div className="container mx-auto px-4 sm:px-6">
