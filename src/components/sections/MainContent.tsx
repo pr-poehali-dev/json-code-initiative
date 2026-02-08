@@ -317,9 +317,9 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 icon: 'Zap'
               },
               { 
-                title: 'Зимняя коллекция', 
-                desc: 'Тёплые жилеты и кардиганы', 
-                price: 'от 7 000 ₽',
+                title: 'Школьные юбки', 
+                desc: 'Стильные юбки разных фасонов', 
+                price: 'от 2 500 ₽',
                 icon: 'CloudSnow'
               },
               { 
