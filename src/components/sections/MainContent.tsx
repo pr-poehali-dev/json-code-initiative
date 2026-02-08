@@ -349,6 +349,14 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                         className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                       />
                     </div>
+                  ) : item.title === 'Школьные фартуки' ? (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img 
+                        src="https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/3616698e-2955-4d95-948b-841ca1371b77.jpg" 
+                        alt="Школьный фартук"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                      />
+                    </div>
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Icon name={item.icon as any} size={80} className="text-[#B89968] opacity-30 group-hover:opacity-50 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
