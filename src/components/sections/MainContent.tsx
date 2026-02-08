@@ -802,7 +802,7 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/0f026849-df48-46db-8c06-d018a5838bfb.jpg',
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/cfea7ef9-f60c-44ab-8241-97def8ac4bfc.jpg'
                     ],
-                    title: 'Фартук праздничный с кружевом',
+                    title: 'Фартук "Арина"',
                     sizes: '122-170',
                     price: '2 500 ₽',
                     description: 'Нарядный белый фартук с изящным кружевом и рюшами. Идеален для праздников и торжественных линеек.'
