@@ -795,6 +795,20 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 {[
                   {
                     images: [
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/3616698e-2955-4d95-948b-841ca1371b77.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/089197b2-d75e-49fe-ba40-61a8b94b7c54.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/2eb9c1d1-4143-493d-84a7-ad8fe5de4f6c.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/3ef931cf-4581-47bd-9afd-b31350262079.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/0f026849-df48-46db-8c06-d018a5838bfb.jpg',
+                      'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/cfea7ef9-f60c-44ab-8241-97def8ac4bfc.jpg'
+                    ],
+                    title: 'Фартук праздничный с кружевом',
+                    sizes: '122-170',
+                    price: '2 500 ₽',
+                    description: 'Нарядный белый фартук с изящным кружевом и рюшами. Идеален для праздников и торжественных линеек.'
+                  },
+                  {
+                    images: [
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/725ceace-c52e-4454-a0e0-904fe16092c9.jpg',
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/90c42eac-bd16-45e5-b9f5-3a09316a4f4b.jpg',
                       'https://cdn.poehali.dev/projects/c86e981a-6e6e-4e01-9814-a4779f1ba4d6/bucket/4f13ed15-316e-4ba5-ac3c-e87fb9372fbc.jpg',
