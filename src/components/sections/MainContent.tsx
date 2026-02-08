@@ -305,8 +305,8 @@ const MainContent = ({ scrollToSection, setIsPolicyOpen }: MainContentProps) => 
                 icon: 'Sparkles'
               },
               { 
-                title: 'Базовая коллекция', 
-                desc: 'Универсальные модели на каждый день', 
+                title: 'Школьные брюки', 
+                desc: 'Классические брюки для мальчиков и девочек', 
                 price: 'от 3 500 ₽',
                 icon: 'Package'
               },
